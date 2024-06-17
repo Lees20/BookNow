@@ -1,0 +1,55 @@
+body{
+    background-image: url(/src/assets/booknow.png);
+    background-repeat: no-repeat;
+    background-size: cover ;
+}
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    background-size: cover;
+  
+}
+
+.home-frame {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    margin-left: 120px;
+    background-size: cover;
+    align-items: center;
+    justify-content: center;
+
+  }
+  
+  .Welcome-Text {
+    h1{
+    font-size: 45px;
+    color: #fff;
+    text-align: center;
+    margin-right: 120px;
+    font-weight: 800;
+    margin-top: 200px;
+    padding: 0px;
+    border-radius: 8px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+    h2{
+        font-size: 25px;
+        color: #fff;
+        text-align: center;
+        font-weight: 800;
+        margin-right: 410px;
+        margin-top: 20px;
+        padding: 10px;
+        border-radius: 8px;
+        font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    }
+  }
+  
