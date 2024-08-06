@@ -1,47 +1,47 @@
 /* SearchBar.css */
 .search-bar-container {
-    display: flex;
-    justify-content: center;
-    align-items: center; /* Αλλάζουμε από center σε flex-start για να είναι πιο ψηλά */
-    height: 100vh;
-    padding-top: -50px; /* Προσθέτουμε padding για να είναι πιο ψηλά */
-  
-    background-size: cover;
-  }
-  
-  .search-bar {
-    display: flex;
-    gap: 16px;
-    flex-direction: row;
-    width: 90%; /* Διευρύνουμε το πλάτος της μπάρας */
-    max-width: 1200px; /* Προσθέτουμε μέγιστο πλάτος για καλύτερη εμφάνιση */
-    align-items: center;
-    justify-content: center;
-    padding: 16px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .search-bar .MuiTextField-root {
-    min-width: 150px;
-  }
-  
-  .search-bar .MuiButton-root {
-    min-width: 100px;
-  }
-  
- 
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Αλλάζουμε από center σε flex-start για να είναι πιο ψηλά */
+  height: 100vh;
+  padding-top: -50px; /* Προσθέτουμε padding για να είναι πιο ψηλά */
+
+  background-size: cover;
+}
+
+.search-bar {
+  display: flex;
+  gap: 16px;
+  flex-direction: row;
+  width: 90%; /* Διευρύνουμε το πλάτος της μπάρας */
+  max-width: 1200px; /* Προσθέτουμε μέγιστο πλάτος για καλύτερη εμφάνιση */
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar .MuiTextField-root {
+  min-width: 150px;
+}
+
+.search-bar .MuiButton-root {
+  min-width: 100px;
+}
+
+
 .search-bar-container{
-    cursor: pointer;
-    .Search-Button{
-        cursor: pointer;
-      background-color: rgb(200, 154, 97);
-    }
-    
+  cursor: pointer;
+  .Search-Button{
+      cursor: pointer;
+    background-color: rgb(200, 154, 97);
+  }
+  
 }
 .Search-Button:hover{
 
-    background-color: rgb(186, 177, 131);
+  background-color: rgb(186, 177, 131);
 }

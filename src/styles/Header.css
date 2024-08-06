@@ -25,18 +25,24 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  z-index: 99;
+  z-index: 1000; /* Ensure the header is on top */
+  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .logo {
   font-size: 3em;
-  color: #fff;
+  color: #333;
   font-weight: 700;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-  
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   user-select: none;
- 
+}
+
+.logo a {
+  color: #333;
+  text-decoration: none;
 }
 
 .navigation {
@@ -50,7 +56,7 @@ header {
   position: relative;
   margin-top: 13px;
   font-size: 1.1em;
-  color: #fff;
+  color: #333;
   text-decoration: none;
   font-weight: 500;
 }
@@ -62,7 +68,7 @@ header {
   bottom: 5px;
   width: 100%;
   height: 3px;
-  background: #fff;
+  background: #333;
   transform-origin: right;
   border-radius: 5px;
   transform: scaleX(0);
@@ -78,20 +84,20 @@ header {
   width: 130px;
   height: 50px;
   background: transparent;
-  border: 2px solid #fff;
+  border: 2px solid #333;
   outline: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 1.1em;
-  color: #fff;
+  color: #333;
   font-weight: 500;
   transition: .5s;
 }
 
 .navigation .btnLogin-popup:hover {
-  background: #083c41;
+  background: #333;
   color: #fff;
-  border: #083c41;
+  border: #333;
   font-size: 1.2em;
 }
 
@@ -101,11 +107,11 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 420px;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.9);
   border: 2px solid rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(20px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  color: #fff;
+  color: #333;
   border-radius: 20px;
   padding: 30px 40px;
   display: flex;
@@ -113,6 +119,7 @@ header {
   align-items: center;
   justify-content: center;
   transition: height .2s ease;
+  z-index: 999; /* Ensure the popup is above other elements */
 }
 
 .wrapper .icon-close {
@@ -120,7 +127,7 @@ header {
   top: 10px;
   right: 10px;
   font-size: 2em;
-  color: #fff;
+  color: #333;
   cursor: pointer;
 }
 
@@ -145,15 +152,15 @@ header {
   background: transparent;
   border: none;
   outline: none;
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(51, 51, 51, 0.2);
   border-radius: 40px;
   font-size: 16px;
-  color: #fff;
+  color: #333;
   padding: 20px 45px 20px 20px;
 }
 
 .input-box input::placeholder {
-  color: #ffffff;
+  color: #333;
 }
 
 .input-box i {
@@ -172,12 +179,12 @@ header {
 }
 
 .remember-forgot label input {
-  accent-color: #ffffff;
+  accent-color: #333;
   margin-right: 3px;
 }
 
 .remember-forgot a {
-  color: #fff;
+  color: #333;
   text-decoration: none;
 }
 
@@ -188,14 +195,14 @@ header {
 .wrapper .btn {
   width: 100%;
   height: 45px;
-  background: #fff;
+  background: #333;
   border: none;
   outline: none;
   border-radius: 40px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   font-size: 16px;
-  color: #333;
+  color: #fff;
   font-weight: 600;
 }
 
@@ -205,8 +212,6 @@ header {
   margin: 20px 0 15px;
 }
 
-.login-register{
-  a{
-  color: #ecc480;
-}
+.login-register a {
+  color: #333;
 }

@@ -4,13 +4,12 @@ import { LocalizationProvider, DatePicker } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 import { enGB } from 'date-fns/locale';
 import { Add, Remove } from '@mui/icons-material';
-import '../styles/Search-Bar.css';
+import { useNavigate } from 'react-router-dom';
+import '../styles/Search-Bar.css'; // Importing CSS
 
-// Define cities as an array
-const cities = ['Αθήνα', 'Θεσσαλονίκη', 'Χανιά', 'Κεφαλονιά'];
+const cities = ['Athens', 'Thessaloniki', 'Chania', 'Kefalonia'];
 
 const SearchBar = () => {
-  // Initialize state variables for city, startDate, endDate, guests, loading, and error
   const [city, setCity] = useState('');
   const [startDate, setStartDate] = useState(null);
   const [endDate, setEndDate] = useState(null);
@@ -18,64 +17,46 @@ const SearchBar = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  // Handle search operation
-  const handleSearch = async () => {
-    // Input validation: Ensure the end date is after the start date
-    if (startDate && endDate && startDate > endDate) {
-      setError('Ημερομηνία άφιξης πρέπει να είναι πριν την αναχώρηση');
-      return;
-    }
+  const navigate = useNavigate();
 
-    setLoading(true); // Set loading state to true
-    setError(''); // Clear any previous errors
-
-    try {
-      // Simulate API call with a delay
-      const response = await new Promise((resolve) => {
-        setTimeout(() => {
-          // Resolve with a mock response
-          resolve({
-            data: {
-              hotels: [
-                { name: 'Hotel Athens', availableRooms: 10 },
-                { name: 'Hotel Thessaloniki', availableRooms: 5 },
-                { name: 'Hotel Chania', availableRooms: 8 },
-                { name: 'Hotel Kefalonia', availableRooms: 4 },
-              ],
-            },
-          });
-        }, 1500); // Simulate 1.5 seconds delay
-      });
-
-      const data = response.data;
-      console.log('Search results:', data);
-
-      // Handle redirection or displaying results here
-      // For example, you might want to pass data to another component or navigate to a different page
-    } catch (err) {
-      setError('Σφάλμα κατά την εκτέλεση της αναζήτησης.'); // Set error message
-      console.error('Error fetching search results:', err);
-    } finally {
-      setLoading(false); // Set loading state to false
-    }
+  const handleGuestsChange = (delta) => {
+    setGuests((prevGuests) => Math.min(8, Math.max(1, prevGuests + delta)));
   };
 
-  // Handle guest increment/decrement
-  const handleGuestsChange = (increment) => {
-    setGuests((prevGuests) => {
-      const newGuests = prevGuests + increment;
-      return newGuests >= 1 && newGuests <= 8 ? newGuests : prevGuests; // Ensure guest count is within range
-    });
+  const handleSearch = async () => {
+    if (!city || !startDate || !endDate || !guests) {
+      setError('All fields are required.');
+      return;
+    }
+    setLoading(true);
+    setError('');
+
+    try {
+      const response = await fetch(
+        `http://localhost:3000/api/properties?city=${city}&startDate=${startDate.toISOString().split('T')[0]}&endDate=${endDate.toISOString().split('T')[0]}&guests=${guests}`
+      );
+
+      const data = await response.json();
+
+      if (data.properties && data.properties.length > 0) {
+        navigate('/results', { state: { properties: data.properties } });
+      } else {
+        setError('No results found');
+      }
+    } catch (err) {
+      setError('Error during search');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={enGB}>
       <div className="search-bar-container">
         <Box className="search-bar">
-          {/* City selection dropdown */}
           <TextField
             select
-            label="Πόλη"
+            label="City"
             value={city}
             onChange={(e) => setCity(e.target.value)}
             variant="outlined"
@@ -89,9 +70,8 @@ const SearchBar = () => {
             ))}
           </TextField>
 
-          {/* Start Date Picker */}
           <DatePicker
-            label="Ημερομηνία Άφιξης"
+            label="Check-in Date"
             value={startDate}
             onChange={(newValue) => setStartDate(newValue)}
             renderInput={(params) => <TextField {...params} variant="outlined" fullWidth margin="normal" />}
@@ -99,9 +79,8 @@ const SearchBar = () => {
             minDate={new Date()}
           />
 
-          {/* End Date Picker */}
           <DatePicker
-            label="Ημερομηνία Αναχώρησης"
+            label="Check-out Date"
             value={endDate}
             onChange={(newValue) => setEndDate(newValue)}
             renderInput={(params) => <TextField {...params} variant="outlined" fullWidth margin="normal" />}
@@ -109,13 +88,12 @@ const SearchBar = () => {
             minDate={startDate || new Date()}
           />
 
-          {/* Guest Selector */}
           <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginTop: 2 }}>
             <IconButton onClick={() => handleGuestsChange(-1)} disabled={guests <= 1}>
               <Remove />
             </IconButton>
             <TextField
-              label="Άτομα"
+              label="Guests"
               type="number"
               value={guests}
               onChange={(e) => setGuests(Number(e.target.value))}
@@ -128,19 +106,17 @@ const SearchBar = () => {
             </IconButton>
           </Box>
 
-          {/* Search Button */}
           <Button
             className="Search-Button"
             variant="contained"
             color="primary"
             onClick={handleSearch}
             sx={{ marginTop: 3, width: '100%' }}
-            disabled={loading} // Disable button when loading
+            disabled={loading}
           >
-            {loading ? 'Αναζήτηση...' : 'Αναζήτηση'} {/* Change button text when loading */}
+            {loading ? 'Searching...' : 'Search'}
           </Button>
 
-          {/* Error Message */}
           {error && (
             <Box sx={{ color: 'red', marginTop: 2 }}>
               {error}

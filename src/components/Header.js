@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/Header.css';
 
 const Header = () => {
@@ -16,9 +17,11 @@ const Header = () => {
   return (
     <>
       <header>
-        <h2 className="logo">BOOKNOW</h2>
+        <h2 className="logo">
+          <Link to="/">BOOKNOW</Link>
+        </h2>
         <nav className="navigation">
-          <a href="#home">Home</a>
+          <a href="/">Home</a>
           <a href="#about">About</a>
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
@@ -87,11 +90,9 @@ const Header = () => {
                 <div className="login-register">
                   <p>
                     Already have an account?
-                   
                     <a href="#" className="login-link" onClick={toggleForm}>
                       Login
                     </a>
-                   
                   </p>
                 </div>
               </form>

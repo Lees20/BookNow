@@ -1,0 +1,83 @@
+/* ResultsPage.css */
+.results-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.results-header {
+  margin-top: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.back-button {
+  background-color: #ea9b35ee;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition-duration: 0.4s;
+  z-index: 2; /* Ensure the button is on top */
+}
+
+.back-button:hover {
+  background-color: white;
+  color: #5d5d5d;
+  border: 2px solid #000000;
+}
+
+.property-list {
+  list-style-type: none;
+  padding: 0;
+  margin-top: 20px; /* Add margin to avoid overlap */
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.property-item {
+  position: relative;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  transition: box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur background effect */
+  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+  overflow: hidden;
+}
+
+.property-item:hover {
+  box-shadow: 0 0 15px rgba(33, 33, 33, 0.3);
+}
+
+.property-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.property-item h2 {
+  margin: 0 0 10px;
+  font-size: 1.5em;
+}
+
+.property-item p {
+  margin: 5px 0;
+}
