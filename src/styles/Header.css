@@ -26,14 +26,13 @@ header {
   justify-content: space-between;
   align-items: center;
   z-index: 1000; /* Ensure the header is on top */
-  background: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
-  backdrop-filter: blur(10px); /* Blur effect */
+  background: linear-gradient(135deg, #f0dfc7ad 40%, #f6b55a 100%);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .logo {
-  font-size: 3em;
-  color: #333;
+  font-size: 2em;
+  color: #fff;
   font-weight: 700;
   text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -41,7 +40,7 @@ header {
 }
 
 .logo a {
-  color: #333;
+  color: #fff;
   text-decoration: none;
 }
 
@@ -56,7 +55,7 @@ header {
   position: relative;
   margin-top: 13px;
   font-size: 1.1em;
-  color: #333;
+  color: #fff;
   text-decoration: none;
   font-weight: 500;
 }
@@ -68,7 +67,7 @@ header {
   bottom: 5px;
   width: 100%;
   height: 3px;
-  background: #333;
+  background: #fff;
   transform-origin: right;
   border-radius: 5px;
   transform: scaleX(0);
@@ -84,20 +83,20 @@ header {
   width: 130px;
   height: 50px;
   background: transparent;
-  border: 2px solid #333;
+  border: 2px solid #fff;
   outline: none;
   border-radius: 6px;
   cursor: pointer;
   font-size: 1.1em;
-  color: #333;
+  color: #fff;
   font-weight: 500;
   transition: .5s;
 }
 
 .navigation .btnLogin-popup:hover {
-  background: #333;
-  color: #fff;
-  border: #333;
+  background: #fff;
+  color: #5151e5;
+  border: 2px solid #fff;
   font-size: 1.2em;
 }
 
@@ -195,7 +194,7 @@ header {
 .wrapper .btn {
   width: 100%;
   height: 45px;
-  background: #333;
+  background: #5151e5;
   border: none;
   outline: none;
   border-radius: 40px;
@@ -213,5 +212,5 @@ header {
 }
 
 .login-register a {
-  color: #333;
+  color: #5151e5;
 }
