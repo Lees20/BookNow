@@ -22,7 +22,7 @@ const Header = () => {
         </h2>
         <nav className="navigation">
           <a href="/">Home</a>
-          <a href="#about">About</a>
+          <a href="/about">About</a>
           <a href="#services">Services</a>
           <a href="#contact">Contact</a>
           <button className="btnLogin-popup" onClick={togglePopup}>

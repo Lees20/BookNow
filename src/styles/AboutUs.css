@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .about-us-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+  }
+  
+  .about-us-page {
+    margin-top: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  
+  .about-us-content {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    max-width: 800px;
+    width: 100%;
+  }
+  
+  .about-us-content h1 {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .about-section,
+  .mission-vision-section,
+  .team-section,
+  .contact-section {
+    margin-bottom: 40px;
+  }
+  
+  .about-section h2,
+  .mission-vision-section h2,
+  .team-section h2,
+  .contact-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #007BFF;
+  }
+  
+  .team-members {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+  
+  .team-member {
+    width: 200px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .team-member img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
+  
+  .team-member h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+  }
+  
+  .team-member p {
+    font-size: 1em;
+    color: #777;
+  }
+  

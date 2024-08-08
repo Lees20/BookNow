@@ -1,0 +1,18 @@
+/* src/styles/Footer.css */
+
+footer {
+   margin-top: 100px;
+    padding: 10px 0;
+    border-top: 1px solid #ddd;
+    position: relative;
+    bottom: 100px;
+    width: 100%;
+    text-align: center;
+    
+ 
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
