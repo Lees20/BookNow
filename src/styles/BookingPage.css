@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-size: cover;
+  position: relative;
+}
+
+.booking-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  backdrop-filter: blur(10px);
+  z-index: -1;
+}
+
+.booking-page {
+  margin-top: 85px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
+}
+
+.booking-form-container {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 100%;
+  max-width: 600px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.booking-form-container:hover {
+  transform: scale(1.02);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.booking-form-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.booking-form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+}
+
+.booking-form-container label {
+  font-size: 1em;
+  color: #333;
+}
+
+.booking-form-container input,
+.booking-form-container select,
+.booking-form-container textarea {
+  padding: 10px;
+  font-size: 1em;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.booking-form-container button {
+  padding: 10px;
+  font-size: 1em;
+  color: #fff;
+  background-color: #ff8000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.booking-form-container button:hover {
+  background-color: #f6ba7f;
+}
+
+.back-button {
+  margin-bottom: 20px;
+  background-color: #ff8000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #f6ba7f;
+}
+
+.property-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 15px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}

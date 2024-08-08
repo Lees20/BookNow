@@ -1,48 +1,37 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import '../styles/ResultsPage.css';
 
 const ResultsPage = () => {
-  const location = useLocation();
   const navigate = useNavigate();
-  const { properties } = location.state || {};
+  const location = useLocation();
+  const { properties, searchParams } = location.state || { properties: [], searchParams: {} };
 
   const handleBackClick = () => {
     navigate('/');
   };
 
-  if (!properties) {
-    return <div>Loading...</div>; // or some other placeholder
-  }
-
-  if (properties.length === 0) {
-    return (
-      <div className="results-container">
-        <div className="results-header">
-          <button className="back-button" onClick={handleBackClick}>Back</button>
-          <div>No properties found.</div>
-        </div>
-      </div>
-    );
-  }
+  const handlePropertyClick = (property) => {
+    navigate('/booking', { state: { property, searchParams } });
+  };
 
   return (
-    <div className="results-container">
-      <div className="results-header">
-        <button className="back-button" onClick={handleBackClick}>Back</button>
-        <h1>Results</h1>
-      </div>
-      <ul className="property-list">
-        {properties.map(property => (
-          <li className="property-item" key={property.id}>
-            {property.imageUrl && <img src={property.imageUrl} alt={property.name} />}
-            <h2>{property.name}</h2>
-            <p>{property.description}</p>
-            <p>Price per night: {property.price_per_night}</p>
-            <p>Total Guests: {property.totalGuests}</p>
-          </li>
+    <div className="results-page">
+      <button className="back-button" onClick={handleBackClick}>
+        Back
+      </button>
+      <div className="property-list">
+        {properties.map((property) => (
+          <div className="property-card" key={property.id} onClick={() => handlePropertyClick(property)}>
+            <img src={property.imageUrl} alt={property.name} className="property-image" />
+            <div className="property-details">
+              <h3>{property.name}</h3>
+              <p>{property.description}</p>
+              <p className="price">${property.price_per_night} per night</p>
+            </div>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };

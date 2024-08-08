@@ -1,11 +1,11 @@
-/* SearchBar.css */
+
 .search-bar-container {
   display: flex;
   justify-content: center;
   align-items: center; /* Αλλάζουμε από center σε flex-start για να είναι πιο ψηλά */
   height: 100vh;
   padding-top: -50px; /* Προσθέτουμε padding για να είναι πιο ψηλά */
-
+ 
   background-size: cover;
 }
 

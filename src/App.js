@@ -2,9 +2,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Header from './components/Header';
-import SearchBar from './components/Search-Bar';
+
 import ResultsPage from './components/ResultsPage';
 import Home from './components/Home';
+import BookingPage from './components/BookingPage';
 function App() {
   return (
     <Router>
@@ -15,6 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/results" element={<ResultsPage />} />
+          <Route path="/booking" element={<BookingPage />} />
         </Routes>
       </div>
     </Router>

@@ -1,83 +1,95 @@
-/* ResultsPage.css */
-.results-container {
-  padding: 20px;
+body {
+  margin-top: 90px;
+  margin: 0;
+  padding: 0;
   font-family: Arial, sans-serif;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.results-header {
-  margin-top: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background-size: cover;
   position: relative;
-  z-index: 1;
-
-  padding: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  margin-bottom: 20px;
 }
 
-.back-button {
-  background-color: #ea9b35ee;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition-duration: 0.4s;
-  z-index: 2; /* Ensure the button is on top */
+.results-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  backdrop-filter: blur(10px);
+  z-index: -1;
 }
 
-.back-button:hover {
-  background-color: white;
-  color: #5d5d5d;
-  border: 2px solid #000000;
+.results-page {
+  margin-top: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px;
+  min-height: 100vh;
 }
 
 .property-list {
-  list-style-type: none;
-  padding: 0;
-  margin-top: 20px; /* Add margin to avoid overlap */
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+  max-width: 1200px;
 }
 
-.property-item {
-  position: relative;
-  border: 1px solid #ddd;
-  padding: 10px;
-  border-radius: 8px;
-  transition: box-shadow 0.3s ease;
-  background: rgba(255, 255, 255, 0.3); /* Semi-transparent background */
-  backdrop-filter: blur(10px); /* Blur background effect */
-  box-shadow: 0 0 11px rgba(33, 33, 33, 0.2);
+.property-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  width: 300px;
   overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
 }
 
-.property-item:hover {
-  box-shadow: 0 0 15px rgba(33, 33, 33, 0.3);
+.property-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-.property-item img {
+.property-image {
   width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 10px;
+  height: 200px;
+  object-fit: cover;
 }
 
-.property-item h2 {
-  margin: 0 0 10px;
+.property-details {
+  padding: 20px;
+}
+
+.property-details h3 {
+  margin: 0 0 10px 0;
   font-size: 1.5em;
+  color: #333;
 }
 
-.property-item p {
-  margin: 5px 0;
+.property-details p {
+  margin: 0 0 5px 0;
+  color: #555;
+}
+
+.property-details .price {
+  font-size: 1.2em;
+  color: #007BFF;
+  margin-top: 10px;
+}
+
+.back-button {
+  margin-bottom: 20px;
+  background-color: #ff8000;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.back-button:hover {
+  background-color: #f08f2d;
 }

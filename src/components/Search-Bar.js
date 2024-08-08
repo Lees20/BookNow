@@ -37,14 +37,17 @@ const SearchBar = () => {
       );
 
       const data = await response.json();
+      
+      console.log('Search data:', data); // Log the received data for debugging
 
       if (data.properties && data.properties.length > 0) {
-        navigate('/results', { state: { properties: data.properties } });
+        navigate('/results', { state: { properties: data.properties, searchParams: { city, startDate, endDate, guests } } });
       } else {
         setError('No results found');
       }
     } catch (err) {
-      setError('Error during search');
+      console.error('Error in search:', err); // Log the error for debugging
+      setError('Error in search');
     } finally {
       setLoading(false);
     }
