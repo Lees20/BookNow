@@ -75,6 +75,8 @@ body {
     height: auto;
     border-radius: 50%;
     margin-bottom: 10px;
+    -webkit-user-drag: none;
+    user-select: none;
   }
   
   .team-member h3 {
@@ -85,5 +87,10 @@ body {
   .team-member p {
     font-size: 1em;
     color: #777;
+  }
+  .meet-team{
+    color: rgb(36, 95, 81);
+    text-align: center;
+    font-style: italic;
   }
   
