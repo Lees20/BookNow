@@ -49,3 +49,54 @@ body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 }
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .logo {
+      margin-bottom: 10px;
+    }
+  
+    .navigation {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+  
+    .navigation a,
+    .navigation button {
+      padding: 10px;
+      width: 100%;
+      text-align: left;
+    }
+  
+    .btnLogin-popup {
+      align-self: stretch;
+    }
+  }
+  
+  /* Smaller Mobile Devices */
+  @media (max-width: 480px) {
+    header {
+      padding: 10px;
+    }
+  
+    .logo {
+      font-size: 1.2em;
+    }
+  
+    .navigation a,
+    .navigation button {
+      padding: 8px;
+    }
+  }
+  
+  /* Content Styles */
+  .content {
+    padding: 20px;
+  }
+  
+  

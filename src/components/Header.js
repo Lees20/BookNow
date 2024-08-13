@@ -16,13 +16,19 @@ const Header = () => {
 
   return (
     <>
+   
       <header>
+      
         <h2 className="logo">
+        
           <Link to="/">BOOKNOW</Link>
         </h2>
         <nav className="navigation">
-          <Link to="/">Home</Link>
-          <Link to="/about">About</Link>
+          <a href="/">Home</a>
+          <a href="/about">About</a>
+          
+          {/* <a href="#services">Services</a>
+          <a href="#contact">Contact</a> */}
           <button className="btnLogin-popup" onClick={togglePopup}>
             Login
           </button>
@@ -50,15 +56,15 @@ const Header = () => {
                   <label>
                     <input type="checkbox" /> Remember me
                   </label>
-                  <button type="button">Forgot password?</button>
+                  <a href="#">Forgot password?</a>
                 </div>
                 <button type="submit" className="btn">Login</button>
                 <div className="login-register">
                   <p>
                     Don't have an account?
-                    <button type="button" className="register-link" onClick={toggleForm}>
+                    <a href="#" className="register-link" onClick={toggleForm}>
                       Register
-                    </button>
+                    </a>
                   </p>
                 </div>
               </form>
@@ -88,9 +94,9 @@ const Header = () => {
                 <div className="login-register">
                   <p>
                     Already have an account?
-                    <button type="button" className="login-link" onClick={toggleForm}>
+                    <a href="#" className="login-link" onClick={toggleForm}>
                       Login
-                    </button>
+                    </a>
                   </p>
                 </div>
               </form>

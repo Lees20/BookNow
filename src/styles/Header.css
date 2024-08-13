@@ -46,13 +46,22 @@ header {
 
 .navigation {
   display: flex;
-  gap: 40px; /* Add space between the navigation items */
-  list-style: none;
-  margin-top: 10px; /* Move the navigation list down */
+  gap: 10px;
+}
+
+.navigation a,
+.navigation button {
+  color: white;
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
 }
 
 .navigation a {
   position: relative;
+  /* margin: 10px; */
   margin-top: 13px;
   font-size: 1.1em;
   color: #fff;
