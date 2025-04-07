@@ -1,6 +1,6 @@
 # Description
 
- Full-Stack Apartment Booking Platform
+## Full-Stack Apartment Booking Platform
 
 A complete apartment rental platform designed and built with a full-stack architecture. Users can search, view, and book vacation rentals through a clean and intuitive interface. The platform includes:
 
