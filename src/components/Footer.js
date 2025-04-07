@@ -5,7 +5,7 @@ import '../styles/Footer.css';
 const Footer = () => {
   return (
     <div className="footer">
-      2025 BOOKNOW | All rights reserved
+      2025 BOOKNOW | All rights reserved | Test Mode
     </div>
   );
 };
