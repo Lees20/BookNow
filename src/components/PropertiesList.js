@@ -23,10 +23,9 @@ const PropertiesList = () => {
         setLoading(false);
       }
     };
-
+   
     getProperties();
-  }, []);
-
+  }, []); 
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 

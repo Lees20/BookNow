@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../styles/BookingPage.css';
@@ -13,26 +13,25 @@ const BookingPage = () => {
 
   const formatDate = (date) => {
     const d = new Date(date);
-    d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); //Timezone offset
+    d.setMinutes(d.getMinutes() - d.getTimezoneOffset()); // Adjust for timezone offset
     return d.toISOString().split('T')[0];
   };
 
   const [checkInDate, setCheckInDate] = useState(formatDate(searchParams.startDate));
   const [checkOutDate, setCheckOutDate] = useState(formatDate(searchParams.endDate));
-  const [totalPrice, setTotalPrice] = useState(0);
   const [message, setMessage] = useState('');
 
-  const calculateTotalPrice = (checkIn, checkOut, pricePerNight) => {
-    const checkInDate = new Date(checkIn);
-    const checkOutDate = new Date(checkOut);
-    const nights = (checkOutDate - checkInDate) / (1000 * 60 * 60 * 24);
+  // Δημιουργία της συνάρτησης calculateTotalPrice
+  const calculateTotalPrice = (checkInDate, checkOutDate, pricePerNight) => {
+    const startDate = new Date(checkInDate);
+    const endDate = new Date(checkOutDate);
+    const timeDifference = endDate - startDate;
+    const nights = timeDifference / (1000 * 3600 * 24); // μετατροπή milliseconds σε ημέρες
     return nights * pricePerNight;
   };
 
-  useEffect(() => {
-    const price = calculateTotalPrice(checkInDate, checkOutDate, property.price_per_night);
-    setTotalPrice(price);
-  }, [checkInDate, checkOutDate, property.price_per_night]);
+  // Υπολογισμός συνολικής τιμής
+  const totalPrice = calculateTotalPrice(checkInDate, checkOutDate, property.price_per_night);
 
   const handleBooking = async () => {
     if (!guestName) {
@@ -50,7 +49,16 @@ const BookingPage = () => {
       });
 
       if (response.status === 201) {
-        navigate('/confirmation', { state: { guestName, reservationId: response.data.id, property, totalPrice, checkInDate, checkOutDate } });
+        navigate('/confirmation', {
+          state: {
+            guestName,
+            bookingId: response.data.id,
+            property,
+            totalPrice,
+            checkInDate,
+            checkOutDate,
+          },
+        });
       } else {
         setMessage('Failed to book the property.');
       }
@@ -80,7 +88,7 @@ const BookingPage = () => {
             min="1"
             placeholder="Guest Count"
             value={guestCount}
-            onChange={(e) => setGuestCount(e.target.value)} 
+            onChange={(e) => setGuestCount(e.target.value)}
           />
           <label>Check-in Date</label>
           <input
@@ -94,11 +102,10 @@ const BookingPage = () => {
             value={checkOutDate}
             onChange={(e) => setCheckOutDate(e.target.value)}
           />
-          <div className="total-price">Total Price: ${totalPrice.toFixed(2)}</div>
+          <p>Total Price: {totalPrice}€</p>
           <button type="button" onClick={handleBooking}>Book</button>
         </form>
-        {/* error message or success message will appear */}
-        {message && <p>{message}</p>} 
+        {message && <p>{message}</p>}
       </div>
     </div>
   );

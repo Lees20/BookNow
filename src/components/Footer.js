@@ -5,7 +5,7 @@ import '../styles/Footer.css';
 const Footer = () => {
   return (
     <div className="footer">
-      2024 BOOKNOW | Designed by Pantelis Karabetsos and Anastasia Katsipi
+      2025 BOOKNOW | All rights reserved
     </div>
   );
 };

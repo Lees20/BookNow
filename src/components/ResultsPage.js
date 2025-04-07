@@ -27,7 +27,7 @@ const ResultsPage = () => {
             <div className="property-details">
               <h3>{property.name}</h3>
               <p>{property.description}</p>
-              <p className="price">${property.price_per_night} per night</p>
+              <p className="price">{property.price_per_night}€ per night</p>
             </div>
           </div>
         ))}

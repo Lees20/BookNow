@@ -13,7 +13,7 @@ const ConfirmationPage = () => {
         <p>Your Reservation ID: {reservationId}</p>
         <p>Check-in Date: {checkInDate}</p>
         <p>Check-out Date: {checkOutDate}</p>
-        <p>Total Price: ${totalPrice.toFixed(2)}</p>
+        <p>Total Price: {totalPrice.toFixed(2)}€</p>
         <div class = "paymentDetails" >Pay at the property</div>
         <div className="property-details">
           <h2>{property.name}</h2>

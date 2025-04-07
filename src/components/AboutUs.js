@@ -47,6 +47,11 @@ const AboutUs = () => {
               <h3>Anastasia Katsipi</h3>
               <p>Developer</p>
             </div>
+            <div className="team-member">
+            <div />
+              <h3>Markella Tserma</h3>
+              <p>Member</p>
+            </div>
           </div>
         </section>
 

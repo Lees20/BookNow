@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:3000/api'; // Change to your backend URL
+const API_URL = 'http://localhost:3000/api'; 
 
 export const fetchProperties = async () => {
   try {
