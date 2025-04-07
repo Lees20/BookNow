@@ -38,18 +38,16 @@ const AboutUs = () => {
           <div class="meet-team">Meet our team</div>
           <div className="team-members">
             <div className="team-member">
-            <img src={pantelisImage} alt="Pantelis Karabetsos" className="profile-image" />
+             <img src={pantelisImage} alt="Pantelis Karabetsos" className="profile-image" />
               <h3>Pantelis Karabetsos</h3>
               <p>Developer</p>
-            </div>
+             </div>
             <div className="team-member">
-            <img src={anastasiaImage} alt="Anastasia Katsipi" className="profile-image" />
+               <img src={anastasiaImage} alt="Anastasia Katsipi" className="profile-image" />
               <h3>Anastasia Katsipi</h3>
               <p>Developer</p>
             </div>
-            <div className="team-member">
-           
-          </div>
+           </div>
         </section>
 
         <section className="contact-section">
