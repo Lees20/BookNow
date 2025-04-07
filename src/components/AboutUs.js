@@ -48,10 +48,7 @@ const AboutUs = () => {
               <p>Developer</p>
             </div>
             <div className="team-member">
-            <div />
-              <h3>Markella Tserma</h3>
-              <p>Member</p>
-            </div>
+           
           </div>
         </section>
 
