@@ -1,3 +1,27 @@
+# Description
+
+ Full-Stack Apartment Booking Platform
+
+A complete apartment rental platform designed and built with a full-stack architecture. Users can search, view, and book vacation rentals through a clean and intuitive interface. The platform includes:
+
+Interactive Search Bar: Users can filter properties by city, date range, and number of guests. Built with React, MUI, and date-fns for a smooth UI/UX.
+
+Real-Time Availability: The frontend communicates with a custom Node.js/Express backend that handles property data, availability, and booking logic.
+
+Results Page: Displays filtered listings dynamically based on user input, leveraging React Router for smooth client-side navigation.
+
+Form Validation & Error Handling: Ensures complete and valid input before searching, with helpful user feedback.
+
+Scalable Structure: Modular design makes it easy to extend features such as user authentication, admin dashboards, and payment integration.
+
+Tech Stack: React, Material UI, React Router, Node.js, Express, REST API, Date-fns
+Highlights: Full-stack implementation, real-time filtering, API integration, responsive and modular design
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
